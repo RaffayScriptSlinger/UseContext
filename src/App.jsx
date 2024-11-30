@@ -1,25 +1,13 @@
-
-
-import React, { useContext } from "react";
+import React from "react";
 import './App.css';
-import ThemeContextProvider, { ThemeContext } from "./context/themeContext";
+import ThemeContextProvider from "./context/themeContext";
+import Header from "./components/header";
 function App() {
-  const { theme, toggleTheme } = useContext(ThemeContext);
-  const handleThemeChange = (newTheme) => {
-    toggleTheme(newTheme);
-  };
+
   return (
     <ThemeContextProvider>
-      <div className={theme === "Light" ? "Light-theme" : "dark-theme"   } id="mainDiv"  >
-  
-        <h1>Color Changer & Use State Practice</h1>
-        <div className="btnDiv ">
-          <button onClick={() => handleThemeChange("Light")}>Light Theme</button>
-          <button onClick={() => handleThemeChange("dark")}>Dark Theme</button>
-        </div>
-
-      </div>
+      <Header />
     </ThemeContextProvider>
-  )
+  ) 
 }
 export default App
